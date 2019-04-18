@@ -1,0 +1,36 @@
+<mat-sidenav-container class="flex-h-full" (backdropClick)="close()">
+  <mat-sidenav #sidenav
+      class="bg-my-blue" 
+      [fixedInViewport]="mobileQuery.matches"
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [opened]="!mobileQuery.matches">
+    <div class="nav-header text-center p-3">
+      <img src="./assets/img/profile.jpg" width="200">
+    </div>
+    <ul class="menu" (click)="!mobileQuery.matches || close()">
+      <li><a routerLink="/home" routerLinkActive="active" mat-button>Home</a></li>
+      <li><a routerLink="/about" routerLinkActive="active" mat-button>About Me</a></li>
+      <li><a routerLink="/portfolio" routerLinkActive="active" mat-button>My Portfolio</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active" mat-button>Contact</a></li>
+    </ul>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="h-full">
+    <div class="flex-h-full">
+      <mat-toolbar *ngIf="mobileQuery.matches" color="primary">
+        <button (click)="sidenav.open()" mat-icon-button>
+          <fa-icon [icon]="faBars"></fa-icon>
+        </button>
+        <span>JhayrDmz</span>
+      </mat-toolbar>
+      <div class="flex-1">
+        <router-outlet></router-outlet>
+      </div>
+      <footer class="flex">
+        <div id="license-footer" class="self-end w-full border-t border-grey-light p-4 text-sm">
+          © 2017 Jhayr Hugo. All Rights Reserved
+        </div>
+      </footer>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,11 @@
+<div class="flex flex-col md:flex-row flex-wrap p-2">
+  <div class="w-100 md:w-1/2 p-3" *ngFor="let project of projects">
+    <mat-card class="h-full">
+      <img mat-card-image [src]="project.headerImage" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <h3 class="text-xl leading-normal">{{ project.title }}</h3>
+        <p class="leading-normal">{{ project.description }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

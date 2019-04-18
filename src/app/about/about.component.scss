@@ -1,0 +1,40 @@
+.my-bio {
+    padding: 60px 0;
+    background-color: #f3f3f3;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.my-bio:after {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(8, 4, 13, 0);
+    border-top-color: #f3f3f3;
+    border-width: 30px;
+    left: 50%;
+    margin-left: -30px;
+    z-index: 1;
+}
+
+.wx-logo {
+    width: 120px;
+    height: 120px;
+}
+
+.tls img {
+    padding: 30px;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    opacity: .3;
+}
+
+.tls img:hover {
+    opacity: 1;
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+}
